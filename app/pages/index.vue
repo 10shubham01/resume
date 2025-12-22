@@ -142,7 +142,7 @@ const saveSettings = () => {
     '[&_pre_code]:p-0 [&_pre_code]:text-inherit [&_pre_code]:font-inherit [&_pre_code]:rounded-none [&_pre_code]:inline [&_pre_code]:border-0 [&_pre_code]:bg-transparent',
     '[&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm [&_code]:font-mono [&_code]:font-medium [&_code]:rounded-md [&_code]:inline-block [&_code]:border [&_code]:border-muted [&_code]:text-highlighted [&_code]:bg-muted',
     '[&_:is(ul,ol)]:ps-6',
-    '[&_ul]:list-disc [&_ul]:marker:text-(--ui-border-accented)',
+    '[&_ul]:list-disc [&_ul]:marker:text-(--ui-border-black)',
     '[&_ol]:list-decimal [&_ol]:marker:text-muted',
     '[&_li]:my-1.5 [&_li]:ps-1.5',
     '[&_img]:rounded-md [&_img]:block [&_img]:max-w-full [&_img.ProseMirror-selectednode]:outline-2 [&_img.ProseMirror-selectednode]:outline-primary',
@@ -444,7 +444,7 @@ const content = ref(
           },
           {
             type: 'text',
-            text: '                                        Dec 2022 -Present'
+            text: '                                                                       Dec 2022 -Present'
           }
         ]
       },
@@ -926,7 +926,7 @@ const content = ref(
           },
           {
             type: 'text',
-            text: '                                                                               Aug 2021 – Nov 2022'
+            text: '                                                                                                              Aug 2021 – Nov 2022'
           }
         ]
       },
@@ -1074,7 +1074,7 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'Lovely Professional University                                                                                                                          '
+            text: 'Lovely Professional University                                                                                                                                                          '
           },
           {
             type: 'text',
