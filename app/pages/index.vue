@@ -323,12 +323,17 @@ const extensions = computed(() => [
 const fileInput = useTemplateRef('fileInput')
 
 const exportJSON = () => {
+  const defaultFilename = `editor-content-${new Date().toISOString().split('T')[0]}`
+  const filename = window.prompt('Enter filename (without .json extension):', defaultFilename)
+
+  if (!filename) return
+
   const dataStr = JSON.stringify(content.value, null, 2)
   const dataBlob = new Blob([dataStr], { type: 'application/json' })
   const url = URL.createObjectURL(dataBlob)
   const link = document.createElement('a')
   link.href = url
-  link.download = `editor-content-${new Date().toISOString().split('T')[0]}.json`
+  link.download = `${filename}.json`
   link.click()
   URL.revokeObjectURL(url)
 }
