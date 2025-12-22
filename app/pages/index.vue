@@ -796,8 +796,8 @@ const handleFileUpload = (event: Event) => {
       placeholder="Write, type '/' for commands..."
       class="min-h-screen"
       :ui="{
-        base: 'p-0 sm:px-0',
-        content: 'max-w-[210mm] mx-auto'
+        base: '',
+        content: 'max-w-[210mm] mx-auto p-[10mm] print:p-0'
       }"
       @update:model-value="onUpdate"
       @create="onCreate"
