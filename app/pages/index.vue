@@ -318,9 +318,10 @@ const content = ref(
         ]
       },
       {
-        type: 'paragraph',
+        type: 'heading',
         attrs: {
-          textAlign: 'left'
+          textAlign: 'left',
+          level: 4
         },
         content: [
           {
@@ -331,10 +332,15 @@ const content = ref(
               }
             ],
             text: 'PROFILE'
-          },
-          {
-            type: 'hardBreak'
-          },
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: 'left'
+        },
+        content: [
           {
             type: 'text',
             text: 'Experienced Software Developer with a solid foundation in full-stack development. Proficient in JavaScript, TypeScript, Vue.js, React.js, Nuxt.js, Next.js, Node.js, and MySQL, committed to delivering impactful and results-focused solutions.'
@@ -345,9 +351,10 @@ const content = ref(
         type: 'horizontalRule'
       },
       {
-        type: 'paragraph',
+        type: 'heading',
         attrs: {
-          textAlign: null
+          textAlign: null,
+          level: 4
         },
         content: [
           {
@@ -358,10 +365,15 @@ const content = ref(
               }
             ],
             text: 'SKILLS'
-          },
-          {
-            type: 'hardBreak'
-          },
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
           {
             type: 'text',
             marks: [
@@ -397,9 +409,10 @@ const content = ref(
         type: 'horizontalRule'
       },
       {
-        type: 'paragraph',
+        type: 'heading',
         attrs: {
-          textAlign: null
+          textAlign: null,
+          level: 4
         },
         content: [
           {
@@ -410,10 +423,15 @@ const content = ref(
               }
             ],
             text: 'EXPERIENCE'
-          },
-          {
-            type: 'hardBreak'
-          },
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
           {
             type: 'text',
             marks: [
@@ -505,9 +523,10 @@ const content = ref(
         ]
       },
       {
-        type: 'paragraph',
+        type: 'heading',
         attrs: {
-          textAlign: null
+          textAlign: null,
+          level: 4
         },
         content: [
           {
@@ -522,10 +541,9 @@ const content = ref(
         ]
       },
       {
-        type: 'heading',
+        type: 'paragraph',
         attrs: {
-          textAlign: null,
-          level: 4
+          textAlign: null
         },
         content: [
           {
@@ -647,10 +665,9 @@ const content = ref(
         ]
       },
       {
-        type: 'heading',
+        type: 'paragraph',
         attrs: {
-          textAlign: null,
-          level: 4
+          textAlign: null
         },
         content: [
           {
@@ -738,10 +755,9 @@ const content = ref(
         ]
       },
       {
-        type: 'heading',
+        type: 'paragraph',
         attrs: {
-          textAlign: null,
-          level: 4
+          textAlign: null
         },
         content: [
           {
@@ -812,14 +828,18 @@ const content = ref(
         ]
       },
       {
-        type: 'heading',
+        type: 'paragraph',
         attrs: {
-          textAlign: null,
-          level: 4
+          textAlign: null
         },
         content: [
           {
             type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
             text: 'Admin Portal:'
           }
         ]
@@ -1045,9 +1065,10 @@ const content = ref(
         type: 'horizontalRule'
       },
       {
-        type: 'paragraph',
+        type: 'heading',
         attrs: {
-          textAlign: null
+          textAlign: null,
+          level: 4
         },
         content: [
           {
@@ -1057,7 +1078,7 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'EDUCATION                                                                                                                                                                                     '
+            text: 'EDUCATION'
           }
         ]
       },
