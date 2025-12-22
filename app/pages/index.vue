@@ -569,19 +569,20 @@ const handleFileUpload = (event: Event) => {
       </template>
 
       <template #body>
-        <div class="space-y-6">
-          <div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Colors Section -->
+          <div class="lg:col-span-2">
             <h4 class="text-sm font-semibold mb-3">
               Colors
             </h4>
-            <div class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <UFormField
                 label="Primary Color"
                 help="Main accent color for the editor"
               >
                 <USelectMenu
                   v-model="settings.primaryColor"
-                  class="min-w-96"
+                  class="w-full"
                   :items="colorOptions"
                   value-key="value"
                 >
@@ -605,7 +606,7 @@ const handleFileUpload = (event: Event) => {
               >
                 <USelectMenu
                   v-model="settings.neutralColor"
-                  class="min-w-96"
+                  class="w-full"
                   :items="neutralOptions"
                   value-key="value"
                 >
@@ -625,6 +626,7 @@ const handleFileUpload = (event: Event) => {
             </div>
           </div>
 
+          <!-- Typography Section -->
           <div>
             <h4 class="text-sm font-semibold mb-3">
               Typography
@@ -633,7 +635,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 1 Size">
                 <USelectMenu
                   v-model="settings.h1Size"
-                  class="min-w-96"
+                  class="w-full"
                   :items="[
                     { value: 'text-2xl', label: '2xl' },
                     { value: 'text-3xl', label: '3xl (Default)' },
@@ -647,7 +649,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 2 Size">
                 <USelectMenu
                   v-model="settings.h2Size"
-                  class="min-w-96"
+                  class="w-full"
                   :items="[
                     { value: 'text-xl', label: 'xl' },
                     { value: 'text-2xl', label: '2xl (Default)' },
@@ -661,7 +663,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 3 Size">
                 <USelectMenu
                   v-model="settings.h3Size"
-                  class="min-w-96"
+                  class="w-full"
                   :items="[
                     { value: 'text-lg', label: 'lg' },
                     { value: 'text-xl', label: 'xl (Default)' },
@@ -675,7 +677,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 4 Size">
                 <USelectMenu
                   v-model="settings.h4Size"
-                  class="min-w-96"
+                  class="w-full"
                   :items="[
                     { value: 'text-base', label: 'base' },
                     { value: 'text-lg', label: 'lg (Default)' },
@@ -689,7 +691,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Paragraph Line Height">
                 <USelectMenu
                   v-model="settings.paragraphLeading"
-                  class="min-w-96"
+                  class="w-full"
                   :items="[
                     { value: 'leading-5', label: 'Tight (5)' },
                     { value: 'leading-6', label: 'Normal (6 - Default)' },
@@ -702,6 +704,7 @@ const handleFileUpload = (event: Event) => {
             </div>
           </div>
 
+          <!-- Spacing & Layout Section -->
           <div>
             <h4 class="text-sm font-semibold mb-3">
               Spacing & Layout
@@ -710,7 +713,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Element Spacing">
                 <USelectMenu
                   v-model="settings.elementSpacing"
-                  class="min-w-96"
+                  class="w-full"
                   :items="[
                     { value: '*:my-1', label: 'Tight (1)' },
                     { value: '*:my-2', label: 'Normal (2 - Default)' },
@@ -724,7 +727,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Horizontal Rule Border">
                 <USelectMenu
                   v-model="settings.hrBorderWidth"
-                  class="min-w-96"
+                  class="w-full"
                   :items="[
                     { value: 'border-1', label: 'Thin (1 - Default)' },
                     { value: 'border-2', label: 'Medium (2)' },
