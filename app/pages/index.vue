@@ -81,7 +81,7 @@ if (savedSettings) {
     `w-full outline-none ${settings.elementSpacing} *:first:mt-0 *:last:mb-0 sm:px-2 selection:bg-primary/20`,
     '[&_:is(p,h1,h2,h3,h4).is-empty]:before:content-[attr(data-placeholder)] [&_:is(p,h1,h2,h3,h4).is-empty]:before:text-dimmed [&_:is(p,h1,h2,h3,h4).is-empty]:before:float-left [&_:is(p,h1,h2,h3,h4).is-empty]:before:h-0 [&_:is(p,h1,h2,h3,h4).is-empty]:before:pointer-events-none',
     '[&_li_.is-empty]:before:content-none',
-    `[&_p]:${settings.paragraphLeading}`,
+    `[&_p]:${settings.paragraphLeading} [&_p]:text-sm`,
     '[&_a]:text-primary [&_a]:border-b [&_a]:border-transparent [&_a]:hover:border-primary [&_a]:font-medium',
     '[&_a]:transition-colors',
     '[&_.mention]:text-primary [&_.mention]:font-medium',
@@ -100,9 +100,9 @@ if (savedSettings) {
     '[&_pre_code]:p-0 [&_pre_code]:text-inherit [&_pre_code]:font-inherit [&_pre_code]:rounded-none [&_pre_code]:inline [&_pre_code]:border-0 [&_pre_code]:bg-transparent',
     '[&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm [&_code]:font-mono [&_code]:font-medium [&_code]:rounded-md [&_code]:inline-block [&_code]:border [&_code]:border-muted [&_code]:text-highlighted [&_code]:bg-muted',
     '[&_:is(ul,ol)]:ps-6',
-    '[&_ul]:list-disc [&_ul]:marker:text-(--ui-border-accented)',
+    '[&_ul]:list-disc [&_ul]:marker:text-(--ui-border-black)',
     '[&_ol]:list-decimal [&_ol]:marker:text-muted',
-    '[&_li]:my-1.5 [&_li]:ps-1.5',
+    '[&_li]:my-1.5 [&_li]:ps-1.5 [&_li]:text-sm',
     '[&_img]:rounded-md [&_img]:block [&_img]:max-w-full [&_img.ProseMirror-selectednode]:outline-2 [&_img.ProseMirror-selectednode]:outline-primary',
     '[&_.ProseMirror-selectednode:not(img):not(pre):not([data-node-view-wrapper])]:bg-primary/20'
   ]
@@ -796,7 +796,7 @@ const handleFileUpload = (event: Event) => {
       placeholder="Write, type '/' for commands..."
       class="min-h-screen"
       :ui="{
-        base: 'p-4 sm:px-6',
+        base: 'p-0 sm:px-0',
         content: 'max-w-[210mm] mx-auto'
       }"
       @update:model-value="onUpdate"
