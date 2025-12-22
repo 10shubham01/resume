@@ -581,6 +581,7 @@ const handleFileUpload = (event: Event) => {
               >
                 <USelectMenu
                   v-model="settings.primaryColor"
+                  class="min-w-96"
                   :items="colorOptions"
                   value-key="value"
                 >
@@ -604,6 +605,7 @@ const handleFileUpload = (event: Event) => {
               >
                 <USelectMenu
                   v-model="settings.neutralColor"
+                  class="min-w-96"
                   :items="neutralOptions"
                   value-key="value"
                 >
@@ -631,6 +633,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 1 Size">
                 <USelectMenu
                   v-model="settings.h1Size"
+                  class="min-w-96"
                   :items="[
                     { value: 'text-2xl', label: '2xl' },
                     { value: 'text-3xl', label: '3xl (Default)' },
@@ -644,6 +647,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 2 Size">
                 <USelectMenu
                   v-model="settings.h2Size"
+                  class="min-w-96"
                   :items="[
                     { value: 'text-xl', label: 'xl' },
                     { value: 'text-2xl', label: '2xl (Default)' },
@@ -657,6 +661,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 3 Size">
                 <USelectMenu
                   v-model="settings.h3Size"
+                  class="min-w-96"
                   :items="[
                     { value: 'text-lg', label: 'lg' },
                     { value: 'text-xl', label: 'xl (Default)' },
@@ -670,6 +675,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Heading 4 Size">
                 <USelectMenu
                   v-model="settings.h4Size"
+                  class="min-w-96"
                   :items="[
                     { value: 'text-base', label: 'base' },
                     { value: 'text-lg', label: 'lg (Default)' },
@@ -683,6 +689,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Paragraph Line Height">
                 <USelectMenu
                   v-model="settings.paragraphLeading"
+                  class="min-w-96"
                   :items="[
                     { value: 'leading-5', label: 'Tight (5)' },
                     { value: 'leading-6', label: 'Normal (6 - Default)' },
@@ -703,6 +710,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Element Spacing">
                 <USelectMenu
                   v-model="settings.elementSpacing"
+                  class="min-w-96"
                   :items="[
                     { value: '*:my-1', label: 'Tight (1)' },
                     { value: '*:my-2', label: 'Normal (2 - Default)' },
@@ -716,6 +724,7 @@ const handleFileUpload = (event: Event) => {
               <UFormField label="Horizontal Rule Border">
                 <USelectMenu
                   v-model="settings.hrBorderWidth"
+                  class="min-w-96"
                   :items="[
                     { value: 'border-1', label: 'Thin (1 - Default)' },
                     { value: 'border-2', label: 'Medium (2)' },
@@ -758,7 +767,7 @@ const handleFileUpload = (event: Event) => {
       class="min-h-screen"
       :ui="{
         base: 'p-4 sm:px-6',
-        content: 'max-w-4xl mx-auto'
+        content: 'max-w-[210mm] mx-auto'
       }"
       @update:model-value="onUpdate"
       @create="onCreate"
