@@ -228,208 +228,901 @@ const content = ref(
     type: 'doc',
     content: [
       {
-        type: 'paragraph',
-        attrs: { textAlign: null },
+        type: 'heading',
+        attrs: {
+          textAlign: 'center',
+          level: 2
+        },
         content: [
-          { type: 'text', text: 'Shubham Gupta' },
-          { type: 'hardBreak' },
-          { type: 'text', text: 'Email: shubhamedu.01@gmail.com' },
-          { type: 'hardBreak' },
-          { type: 'text', text: 'Website | GitHub | LinkedIn | +91 9369745870' }
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Shubham Gupta'
+          }
         ]
       },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
       {
         type: 'paragraph',
-        attrs: { textAlign: null },
+        attrs: {
+          textAlign: 'center'
+        },
         content: [
-          { type: 'text', text: 'PROFILE' },
-          { type: 'hardBreak' },
+          {
+            type: 'text',
+            text: 'Email: shubhamedu.01@gmail.com'
+          },
+          {
+            type: 'hardBreak'
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'link',
+                attrs: {
+                  href: 'https://shubhamgupta.dev/',
+                  target: '_blank',
+                  rel: 'noopener noreferrer nofollow',
+                  class: null
+                }
+              }
+            ],
+            text: 'Website'
+          },
+          {
+            type: 'text',
+            text: ' | '
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'link',
+                attrs: {
+                  href: 'https://github.com/10shubham01/',
+                  target: '_blank',
+                  rel: 'noopener noreferrer nofollow',
+                  class: null
+                }
+              }
+            ],
+            text: 'GitHub'
+          },
+          {
+            type: 'text',
+            text: ' | '
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'link',
+                attrs: {
+                  href: 'https://www.linkedin.com/in/shubhamgupta001/',
+                  target: '_blank',
+                  rel: 'noopener noreferrer nofollow',
+                  class: null
+                }
+              }
+            ],
+            text: 'LinkedIn'
+          },
+          {
+            type: 'text',
+            text: ' | +91 9369745870'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: 'left'
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'PROFILE'
+          },
+          {
+            type: 'hardBreak'
+          },
           {
             type: 'text',
             text: 'Experienced Software Developer with a solid foundation in full-stack development. Proficient in JavaScript, TypeScript, Vue.js, React.js, Nuxt.js, Next.js, Node.js, and MySQL, committed to delivering impactful and results-focused solutions.'
           }
         ]
       },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
+      {
+        type: 'horizontalRule'
+      },
       {
         type: 'paragraph',
-        attrs: { textAlign: null },
+        attrs: {
+          textAlign: null
+        },
         content: [
-          { type: 'text', text: 'SKILLS' },
-          { type: 'hardBreak' },
           {
             type: 'text',
-            text: 'Advanced Knowledge: TypeScript, JavaScript, NodeJS, HTML, CSS, Tailwind, VueJS, NuxtJS, ReactJS, NextJS, AdonisJS, ExpressJS, PostgreSQL, MySQL, Git, Bash, Webpack, Vite, AWS, GitHub CI/CD'
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'SKILLS'
           },
-          { type: 'hardBreak' },
           {
-            type: 'text',
-            text: 'Basic Knowledge: C, C++, Java, Python'
-          }
-        ]
-      },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          { type: 'text', text: 'EXPERIENCE' },
-          { type: 'hardBreak' },
-          {
-            type: 'text',
-            text: 'Senior Software Engineer — Credilio Financial Technologies (Dec 2022 – Present)'
-          }
-        ]
-      },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          {
-            type: 'text',
-            text: 'Led a team of engineers, conducted code reviews, mentored junior developers, and onboarded 5+ engineers to improve productivity.'
+            type: 'hardBreak'
           },
-          { type: 'hardBreak' },
           {
             type: 'text',
-            text: 'Managed and optimized GitHub CI/CD pipelines and AWS deployments.'
-          }
-        ]
-      },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          { type: 'text', text: 'KEY PROJECTS' }
-        ]
-      },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          { type: 'text', text: 'Customer Portal' },
-          { type: 'hardBreak' },
-          {
-            type: 'text',
-            text: 'Integrated bank APIs for credit card and loan journeys, improved maintainability by 20% using composable architecture, optimized performance with async components, virtual scrolling, debouncing, and throttling.'
-          }
-        ]
-      },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          {
-            type: 'text',
-            text: 'Implemented theming customization, robust validations (Zod, Yup, Vee-Validate), and enforced quality using ESLint, Prettier, and Vite optimizations.'
-          }
-        ]
-      },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          { type: 'text', text: 'Advisor Portal' },
-          { type: 'hardBreak' },
-          {
-            type: 'text',
-            text: 'Built accessible reusable components, reporting systems with secure downloads, native app integrations, and JWT-based authentication.'
-          }
-        ]
-      },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          { type: 'text', text: 'Plug and Play Platform' },
-          { type: 'hardBreak' },
-          {
-            type: 'text',
-            text: 'Delivered dynamic theming, WebView communication for Android/iOS apps, and led a team of 3–4 developers supporting partner integrations.'
-          }
-        ]
-      },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          { type: 'text', text: 'Admin Portal' },
-          { type: 'hardBreak' },
-          {
-            type: 'text',
-            text: 'Engineered role-based access control systems and CSV-based administrative reporting tools.'
-          }
-        ]
-      },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
-      {
-        type: 'paragraph',
-        attrs: { textAlign: null },
-        content: [
-          {
-            type: 'text',
-            text: 'Software Engineer / Trainee — Mountblue (Aug 2021 – Nov 2022)'
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Advanced Knowledge:'
           },
-          { type: 'hardBreak' },
           {
             type: 'text',
-            text: 'Built full-stack apps with Vue, React, Node.js, migrated Nuxt 2 to Nuxt 3, and adopted modern tooling.'
+            text: ' TypeScript, JavaScript, NodeJS, HTML, CSS, Tailwind, VueJS, NuxtJS, ReactJS, NextJS, AdonisJS, ExpressJS, PostgreSQL, MySQL, Git, Bash, Webpack, Vite, AWS, GitHub CI/CD.'
+          },
+          {
+            type: 'hardBreak'
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Basic Knowledge:'
+          },
+          {
+            type: 'text',
+            text: ' C, C++, Java, Python'
           }
         ]
       },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
+      {
+        type: 'horizontalRule'
+      },
       {
         type: 'paragraph',
-        attrs: { textAlign: null },
+        attrs: {
+          textAlign: null
+        },
         content: [
-          { type: 'text', text: 'EDUCATION' },
-          { type: 'hardBreak' },
           {
             type: 'text',
-            text: 'Bachelor of Computer Applications — Lovely Professional University (2018 – 2021)'
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'EXPERIENCE'
+          },
+          {
+            type: 'hardBreak'
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Senior Software Engineer'
+          },
+          {
+            type: 'text',
+            text: ': '
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'link',
+                attrs: {
+                  href: 'https://www.credilio.in/',
+                  target: '_blank',
+                  rel: 'noopener noreferrer nofollow',
+                  class: null
+                }
+              }
+            ],
+            text: 'Credilio Financial Technologies'
+          },
+          {
+            type: 'text',
+            text: '                                        Dec 2022 -Present'
           }
         ]
       },
-
-      { type: 'paragraph', attrs: { textAlign: null } },
-
       {
-        type: 'paragraph',
-        attrs: { textAlign: null },
+        type: 'bulletList',
         content: [
-          { type: 'text', text: 'OPEN SOURCE PROJECTS' },
-          { type: 'hardBreak' },
           {
-            type: 'text',
-            text: 'Spotlight Chrome Extension, Symbiote UI (Under Development), API Logger'
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Led a team of engineers, conducted thorough code reviews to ensure quality assurance and mentored junior developers to enhance their technical skills and coding practices.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Successfully onboarded 5+ developers by providing comprehensive training, knowledge transfer, and ongoing support to accelerate their productivity.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Managed and optimized GitHub CI/CD pipelines for streamlined deployment processes on AWS infrastructure.'
+                  }
+                ]
+              }
+            ]
           }
         ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'KEY PROJECTS'
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        attrs: {
+          textAlign: null,
+          level: 4
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Customer Portal:'
+          }
+        ]
+      },
+      {
+        type: 'bulletList',
+        content: [
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Integrated bank APIs to streamline credit card and personal loan application journeys, enhancing user experience and operational efficiency. '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Spearheaded a project restructuring initiative using composable components and industry best practices, improving code maintainability by 20% and enhancing accessibility. '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Achieved significant page load time optimization through expertise in lifecycle hooks, rendering strategies, asynchronous components, virtual scrolling, debouncing, and throttling.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: ' Designed a customizable portal enabling partners to personalize colors, logos, fonts, and backgrounds for seamless branding integration. '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Utilized validation libraries like Zod, Yup, and Vee-Validate to enforce robust input validation across projects.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Maintained code quality with tools like ESLint, Prettier, and advanced Vite configurations for efficient client-side asset bundling.'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        attrs: {
+          textAlign: null,
+          level: 4
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Advisor Portal:'
+          }
+        ]
+      },
+      {
+        type: 'bulletList',
+        content: [
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Developed fully accessible and reusable components such as file uploads and text inputs with validation and sanitization.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Implemented lead, customer, and earnings report generation with secure file downloads. '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Integrated web-based landing and library pages into native apps (Credilio Pro).'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Designed persistent, session-based authentication and authorization systems using JWT, adhering to best security practices.'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        attrs: {
+          textAlign: null,
+          level: 4
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Plug and Play:'
+          }
+        ]
+      },
+      {
+        type: 'bulletList',
+        content: [
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Delivered dynamic theme support for seamless adaptation to partner platforms with native features like image/text sharing and clipboard access.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Facilitated communication between Android/iOS apps and WebView in a single-page application (SPA). '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Guided partner developers in integrating the web platform into their native applications, leading a team of 3-4 developers.'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        attrs: {
+          textAlign: null,
+          level: 4
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'Admin Portal:'
+          }
+        ]
+      },
+      {
+        type: 'bulletList',
+        content: [
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Engineered user access management systems based on roles and policies to restrict unauthorized access effectively.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Developed robust CSV-based report creation and file download functionalities tailored for administrative use.'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Techstack:'
+          },
+          {
+            type: 'text',
+            text: ' Vue, Nuxt, Vuetify, SCSS, Nuxt UI, JWT, Validations, Tailwind, Github actions (CI/CD)'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        }
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Software Engineer/Trainee:'
+          },
+          {
+            type: 'text',
+            text: ' '
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'link',
+                attrs: {
+                  href: 'https://www.mountblue.io/',
+                  target: '_blank',
+                  rel: 'noopener noreferrer nofollow',
+                  class: null
+                }
+              }
+            ],
+            text: 'Mountblue'
+          },
+          {
+            type: 'text',
+            text: '                                                                               Aug 2021 – Nov 2022'
+          }
+        ]
+      },
+      {
+        type: 'bulletList',
+        content: [
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Front-End and Back-End Development: Built dynamic web applications using Vue.js, React.js, and Node.js, delivering robust APIs and database connections with Express.js and PostgreSQL/MySQL. '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Full-Stack Consulting for Credilio Financial Technologies'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Adaptability and Research: Regularly researched and adopted new frameworks, libraries, and tools to maintain up-to-date tech stacks and improve application performance and maintainability. '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Problem Solving and Quality Assurance: Delivered high-quality code with a strong focus on troubleshooting, debugging, and ensuring reliable, secure applications through code reviews and best practices from training. '
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Successfully migrated a Nuxt 2 project to Nuxt 3, implementing a scalable architecture and optimising performance for improved efficiency and maintainability'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'TechStack'
+          },
+          {
+            type: 'text',
+            text: ': Vue2, Nuxt2, ReactJS, TypeScript, ExpressJs , AdonisJs,'
+          }
+        ]
+      },
+      {
+        type: 'horizontalRule'
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'EDUCATION                                                                                                                                                                                     '
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Lovely Professional University                                                                                                                          '
+          },
+          {
+            type: 'text',
+            text: '2018-2021'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'Bachelor of Computer Applications'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'Undergraduate Coursework: Operating Systems, Databases, C,'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'C++, HTML5, CSS, Ionic, React Native'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        }
       }
     ]
   }
