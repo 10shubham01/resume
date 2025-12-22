@@ -9,6 +9,7 @@ const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
 
 const room = computed(() => route.query.room as string | undefined)
+const hideWatermark = computed(() => route.query.thanks === 'shubham')
 
 const user = useState('user', () => ({
   name: getRandomName(),
@@ -517,6 +518,19 @@ const handleFileUpload = (event: Event) => {
 
 <template>
   <div>
+    <!-- Watermark -->
+    <div
+      v-if="!hideWatermark"
+      class="hidden print:flex fixed inset-0 pointer-events-none z-10 items-center justify-center"
+    >
+      <div
+        class="text-[8rem] font-bold text-neutral-400/40 select-none whitespace-nowrap"
+        style="transform: rotate(-45deg);"
+      >
+        resume.shubham.gupta
+      </div>
+    </div>
+
     <!-- Export/Import/Settings Controls -->
     <div class="fixed top-4 right-4 z-50 flex gap-2 print:hidden">
       <UButton
