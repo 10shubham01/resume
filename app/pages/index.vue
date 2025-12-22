@@ -44,13 +44,54 @@ const loadSettings = () => {
 const savedSettings = loadSettings()
 const settings = reactive({
   primaryColor: savedSettings?.primaryColor || appConfig.ui.colors.primary || 'blue',
-  neutralColor: savedSettings?.neutralColor || appConfig.ui.colors.neutral || 'stone'
+  neutralColor: savedSettings?.neutralColor || appConfig.ui.colors.neutral || 'stone',
+  // Typography
+  h1Size: savedSettings?.h1Size || 'text-3xl',
+  h2Size: savedSettings?.h2Size || 'text-2xl',
+  h3Size: savedSettings?.h3Size || 'text-xl',
+  h4Size: savedSettings?.h4Size || 'text-lg',
+  paragraphLeading: savedSettings?.paragraphLeading || 'leading-6',
+  // Spacing
+  elementSpacing: savedSettings?.elementSpacing || '*:my-2',
+  // HR style
+  hrBorderWidth: savedSettings?.hrBorderWidth || 'border-1'
 })
 
-// Apply saved settings
+// Apply saved settings on load
 if (savedSettings) {
   appConfig.ui.colors.primary = savedSettings.primaryColor
   appConfig.ui.colors.neutral = savedSettings.neutralColor
+
+  // Apply editor styles
+  appConfig.ui.editor.slots.base = [
+    `w-full outline-none ${settings.elementSpacing} *:first:mt-0 *:last:mb-0 sm:px-2 selection:bg-primary/20`,
+    '[&_:is(p,h1,h2,h3,h4).is-empty]:before:content-[attr(data-placeholder)] [&_:is(p,h1,h2,h3,h4).is-empty]:before:text-dimmed [&_:is(p,h1,h2,h3,h4).is-empty]:before:float-left [&_:is(p,h1,h2,h3,h4).is-empty]:before:h-0 [&_:is(p,h1,h2,h3,h4).is-empty]:before:pointer-events-none',
+    '[&_li_.is-empty]:before:content-none',
+    `[&_p]:${settings.paragraphLeading}`,
+    '[&_a]:text-primary [&_a]:border-b [&_a]:border-transparent [&_a]:hover:border-primary [&_a]:font-medium',
+    '[&_a]:transition-colors',
+    '[&_.mention]:text-primary [&_.mention]:font-medium',
+    '[&_:is(h1,h2,h3,h4)]:text-highlighted [&_:is(h1,h2,h3,h4)]:font-bold',
+    `[&_h1]:${settings.h1Size}`,
+    `[&_h2]:${settings.h2Size}`,
+    `[&_h3]:${settings.h3Size}`,
+    `[&_h4]:${settings.h4Size}`,
+    '[&_:is(h1,h2,h3,h4)>code]:border-dashed [&_:is(h1,h2,h3,h4)>code]:font-bold',
+    '[&_h2>code]:text-xl/6',
+    '[&_h3>code]:text-lg/5',
+    '[&_blockquote]:border-s-4 [&_blockquote]:border-accented [&_blockquote]:ps-4 [&_blockquote]:italic',
+    '[&_[data-type=horizontalRule]]:my-0 [&_[data-type=horizontalRule]]:py-0',
+    `[&_hr]:border-t [&_hr]:border-black [&_hr]:${settings.hrBorderWidth}`,
+    '[&_pre]:text-sm/6 [&_pre]:border [&_pre]:border-muted [&_pre]:bg-muted [&_pre]:rounded-md [&_pre]:px-4 [&_pre]:py-3 [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_pre]:overflow-x-auto',
+    '[&_pre_code]:p-0 [&_pre_code]:text-inherit [&_pre_code]:font-inherit [&_pre_code]:rounded-none [&_pre_code]:inline [&_pre_code]:border-0 [&_pre_code]:bg-transparent',
+    '[&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm [&_code]:font-mono [&_code]:font-medium [&_code]:rounded-md [&_code]:inline-block [&_code]:border [&_code]:border-muted [&_code]:text-highlighted [&_code]:bg-muted',
+    '[&_:is(ul,ol)]:ps-6',
+    '[&_ul]:list-disc [&_ul]:marker:text-(--ui-border-accented)',
+    '[&_ol]:list-decimal [&_ol]:marker:text-muted',
+    '[&_li]:my-1.5 [&_li]:ps-1.5',
+    '[&_img]:rounded-md [&_img]:block [&_img]:max-w-full [&_img.ProseMirror-selectednode]:outline-2 [&_img.ProseMirror-selectednode]:outline-primary',
+    '[&_.ProseMirror-selectednode:not(img):not(pre):not([data-node-view-wrapper])]:bg-primary/20'
+  ]
 }
 
 // Save settings to localStorage and apply
@@ -58,9 +99,48 @@ const saveSettings = () => {
   if (typeof window !== 'undefined') {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings))
   }
+
+  // Update colors
   appConfig.ui.colors.primary = settings.primaryColor
   appConfig.ui.colors.neutral = settings.neutralColor
+
+  // Rebuild the entire base styles array with new settings
+  appConfig.ui.editor.slots.base = [
+    `w-full outline-none ${settings.elementSpacing} *:first:mt-0 *:last:mb-0 sm:px-2 selection:bg-primary/20`,
+    '[&_:is(p,h1,h2,h3,h4).is-empty]:before:content-[attr(data-placeholder)] [&_:is(p,h1,h2,h3,h4).is-empty]:before:text-dimmed [&_:is(p,h1,h2,h3,h4).is-empty]:before:float-left [&_:is(p,h1,h2,h3,h4).is-empty]:before:h-0 [&_:is(p,h1,h2,h3,h4).is-empty]:before:pointer-events-none',
+    '[&_li_.is-empty]:before:content-none',
+    `[&_p]:${settings.paragraphLeading}`,
+    '[&_a]:text-primary [&_a]:border-b [&_a]:border-transparent [&_a]:hover:border-primary [&_a]:font-medium',
+    '[&_a]:transition-colors',
+    '[&_.mention]:text-primary [&_.mention]:font-medium',
+    '[&_:is(h1,h2,h3,h4)]:text-highlighted [&_:is(h1,h2,h3,h4)]:font-bold',
+    `[&_h1]:${settings.h1Size}`,
+    `[&_h2]:${settings.h2Size}`,
+    `[&_h3]:${settings.h3Size}`,
+    `[&_h4]:${settings.h4Size}`,
+    '[&_:is(h1,h2,h3,h4)>code]:border-dashed [&_:is(h1,h2,h3,h4)>code]:font-bold',
+    '[&_h2>code]:text-xl/6',
+    '[&_h3>code]:text-lg/5',
+    '[&_blockquote]:border-s-4 [&_blockquote]:border-accented [&_blockquote]:ps-4 [&_blockquote]:italic',
+    '[&_[data-type=horizontalRule]]:my-0 [&_[data-type=horizontalRule]]:py-0',
+    `[&_hr]:border-t [&_hr]:border-red-500 [&_hr]:${settings.hrBorderWidth}`,
+    '[&_pre]:text-sm/6 [&_pre]:border [&_pre]:border-muted [&_pre]:bg-muted [&_pre]:rounded-md [&_pre]:px-4 [&_pre]:py-3 [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_pre]:overflow-x-auto',
+    '[&_pre_code]:p-0 [&_pre_code]:text-inherit [&_pre_code]:font-inherit [&_pre_code]:rounded-none [&_pre_code]:inline [&_pre_code]:border-0 [&_pre_code]:bg-transparent',
+    '[&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm [&_code]:font-mono [&_code]:font-medium [&_code]:rounded-md [&_code]:inline-block [&_code]:border [&_code]:border-muted [&_code]:text-highlighted [&_code]:bg-muted',
+    '[&_:is(ul,ol)]:ps-6',
+    '[&_ul]:list-disc [&_ul]:marker:text-(--ui-border-accented)',
+    '[&_ol]:list-decimal [&_ol]:marker:text-muted',
+    '[&_li]:my-1.5 [&_li]:ps-1.5',
+    '[&_img]:rounded-md [&_img]:block [&_img]:max-w-full [&_img.ProseMirror-selectednode]:outline-2 [&_img.ProseMirror-selectednode]:outline-primary',
+    '[&_.ProseMirror-selectednode:not(img):not(pre):not([data-node-view-wrapper])]:bg-primary/20'
+  ]
+
   isSettingsOpen.value = false
+
+  // Force a reload to apply changes
+  if (typeof window !== 'undefined') {
+    window.location.reload()
+  }
 }
 
 const colorOptions = [
@@ -489,55 +569,163 @@ const handleFileUpload = (event: Event) => {
       </template>
 
       <template #body>
-        <div class="space-y-4">
-          <UFormField
-            label="Primary Color"
-            help="Main accent color for the editor"
-            class="w-full"
-          >
-            <USelectMenu
-              v-model="settings.primaryColor"
-              :items="colorOptions"
-              value-key="value"
-              class="min-w-96"
-            >
-              <template #item-leading="{ item }">
-                <span :class="[item.class, 'size-4']" />
-              </template>
-              <template #leading>
-                <span
-                  :class="[
-                    colorOptions.find(c => c.value === settings.primaryColor)?.class,
-                    'size-4'
-                  ]"
-                />
-              </template>
-            </USelectMenu>
-          </UFormField>
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-sm font-semibold mb-3">
+              Colors
+            </h4>
+            <div class="space-y-4">
+              <UFormField
+                label="Primary Color"
+                help="Main accent color for the editor"
+              >
+                <USelectMenu
+                  v-model="settings.primaryColor"
+                  :items="colorOptions"
+                  value-key="value"
+                >
+                  <template #item-leading="{ item }">
+                    <span :class="[item.class, 'size-4']" />
+                  </template>
+                  <template #leading>
+                    <span
+                      :class="[
+                        colorOptions.find(c => c.value === settings.primaryColor)?.class,
+                        'size-4'
+                      ]"
+                    />
+                  </template>
+                </USelectMenu>
+              </UFormField>
 
-          <UFormField
-            label="Neutral Color"
-            help="Background and text color scheme"
-          >
-            <USelectMenu
-              v-model="settings.neutralColor"
-              :items="neutralOptions"
-              value-key="value"
-              class="min-w-96 "
-            >
-              <template #item-leading="{ item }">
-                <span :class="[item.class, 'size-4']" />
-              </template>
-              <template #leading>
-                <span
-                  :class="[
-                    neutralOptions.find(c => c.value === settings.neutralColor)?.class,
-                    'size-4'
+              <UFormField
+                label="Neutral Color"
+                help="Background and text color scheme"
+              >
+                <USelectMenu
+                  v-model="settings.neutralColor"
+                  :items="neutralOptions"
+                  value-key="value"
+                >
+                  <template #item-leading="{ item }">
+                    <span :class="[item.class, 'size-4']" />
+                  </template>
+                  <template #leading>
+                    <span
+                      :class="[
+                        neutralOptions.find(c => c.value === settings.neutralColor)?.class,
+                        'size-4'
+                      ]"
+                    />
+                  </template>
+                </USelectMenu>
+              </UFormField>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-sm font-semibold mb-3">
+              Typography
+            </h4>
+            <div class="space-y-4">
+              <UFormField label="Heading 1 Size">
+                <USelectMenu
+                  v-model="settings.h1Size"
+                  :items="[
+                    { value: 'text-2xl', label: '2xl' },
+                    { value: 'text-3xl', label: '3xl (Default)' },
+                    { value: 'text-4xl', label: '4xl' },
+                    { value: 'text-5xl', label: '5xl' }
                   ]"
+                  value-key="value"
                 />
-              </template>
-            </USelectMenu>
-          </UFormField>
+              </UFormField>
+
+              <UFormField label="Heading 2 Size">
+                <USelectMenu
+                  v-model="settings.h2Size"
+                  :items="[
+                    { value: 'text-xl', label: 'xl' },
+                    { value: 'text-2xl', label: '2xl (Default)' },
+                    { value: 'text-3xl', label: '3xl' },
+                    { value: 'text-4xl', label: '4xl' }
+                  ]"
+                  value-key="value"
+                />
+              </UFormField>
+
+              <UFormField label="Heading 3 Size">
+                <USelectMenu
+                  v-model="settings.h3Size"
+                  :items="[
+                    { value: 'text-lg', label: 'lg' },
+                    { value: 'text-xl', label: 'xl (Default)' },
+                    { value: 'text-2xl', label: '2xl' },
+                    { value: 'text-3xl', label: '3xl' }
+                  ]"
+                  value-key="value"
+                />
+              </UFormField>
+
+              <UFormField label="Heading 4 Size">
+                <USelectMenu
+                  v-model="settings.h4Size"
+                  :items="[
+                    { value: 'text-base', label: 'base' },
+                    { value: 'text-lg', label: 'lg (Default)' },
+                    { value: 'text-xl', label: 'xl' },
+                    { value: 'text-2xl', label: '2xl' }
+                  ]"
+                  value-key="value"
+                />
+              </UFormField>
+
+              <UFormField label="Paragraph Line Height">
+                <USelectMenu
+                  v-model="settings.paragraphLeading"
+                  :items="[
+                    { value: 'leading-5', label: 'Tight (5)' },
+                    { value: 'leading-6', label: 'Normal (6 - Default)' },
+                    { value: 'leading-7', label: 'Relaxed (7)' },
+                    { value: 'leading-8', label: 'Loose (8)' }
+                  ]"
+                  value-key="value"
+                />
+              </UFormField>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-sm font-semibold mb-3">
+              Spacing & Layout
+            </h4>
+            <div class="space-y-4">
+              <UFormField label="Element Spacing">
+                <USelectMenu
+                  v-model="settings.elementSpacing"
+                  :items="[
+                    { value: '*:my-1', label: 'Tight (1)' },
+                    { value: '*:my-2', label: 'Normal (2 - Default)' },
+                    { value: '*:my-3', label: 'Relaxed (3)' },
+                    { value: '*:my-4', label: 'Loose (4)' }
+                  ]"
+                  value-key="value"
+                />
+              </UFormField>
+
+              <UFormField label="Horizontal Rule Border">
+                <USelectMenu
+                  v-model="settings.hrBorderWidth"
+                  :items="[
+                    { value: 'border-1', label: 'Thin (1 - Default)' },
+                    { value: 'border-2', label: 'Medium (2)' },
+                    { value: 'border-4', label: 'Thick (4)' }
+                  ]"
+                  value-key="value"
+                />
+              </UFormField>
+            </div>
+          </div>
         </div>
       </template>
 
