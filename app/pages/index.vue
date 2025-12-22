@@ -21,6 +21,7 @@ const editorRef = useTemplateRef('editorRef')
 
 // LocalStorage key for persisting editor content
 const STORAGE_KEY = 'editor-content'
+const SETTINGS_KEY = 'editor-settings'
 
 // Load content from localStorage on client side
 const loadFromStorage = () => {
@@ -28,6 +29,67 @@ const loadFromStorage = () => {
   const stored = localStorage.getItem(STORAGE_KEY)
   return stored ? JSON.parse(stored) : null
 }
+
+// Settings modal
+const isSettingsOpen = ref(false)
+
+// Load settings from localStorage
+const loadSettings = () => {
+  if (typeof window === 'undefined') return null
+  const stored = localStorage.getItem(SETTINGS_KEY)
+  return stored ? JSON.parse(stored) : null
+}
+
+// Initialize settings with saved values or defaults
+const savedSettings = loadSettings()
+const settings = reactive({
+  primaryColor: savedSettings?.primaryColor || appConfig.ui.colors.primary || 'blue',
+  neutralColor: savedSettings?.neutralColor || appConfig.ui.colors.neutral || 'stone'
+})
+
+// Apply saved settings
+if (savedSettings) {
+  appConfig.ui.colors.primary = savedSettings.primaryColor
+  appConfig.ui.colors.neutral = savedSettings.neutralColor
+}
+
+// Save settings to localStorage and apply
+const saveSettings = () => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings))
+  }
+  appConfig.ui.colors.primary = settings.primaryColor
+  appConfig.ui.colors.neutral = settings.neutralColor
+  isSettingsOpen.value = false
+}
+
+const colorOptions = [
+  { value: 'red', label: 'Red', class: 'bg-red-500' },
+  { value: 'orange', label: 'Orange', class: 'bg-orange-500' },
+  { value: 'amber', label: 'Amber', class: 'bg-amber-500' },
+  { value: 'yellow', label: 'Yellow', class: 'bg-yellow-500' },
+  { value: 'lime', label: 'Lime', class: 'bg-lime-500' },
+  { value: 'green', label: 'Green', class: 'bg-green-500' },
+  { value: 'emerald', label: 'Emerald', class: 'bg-emerald-500' },
+  { value: 'teal', label: 'Teal', class: 'bg-teal-500' },
+  { value: 'cyan', label: 'Cyan', class: 'bg-cyan-500' },
+  { value: 'sky', label: 'Sky', class: 'bg-sky-500' },
+  { value: 'blue', label: 'Blue', class: 'bg-blue-500' },
+  { value: 'indigo', label: 'Indigo', class: 'bg-indigo-500' },
+  { value: 'violet', label: 'Violet', class: 'bg-violet-500' },
+  { value: 'purple', label: 'Purple', class: 'bg-purple-500' },
+  { value: 'fuchsia', label: 'Fuchsia', class: 'bg-fuchsia-500' },
+  { value: 'pink', label: 'Pink', class: 'bg-pink-500' },
+  { value: 'rose', label: 'Rose', class: 'bg-rose-500' }
+]
+
+const neutralOptions = [
+  { value: 'slate', label: 'Slate', class: 'bg-slate-500' },
+  { value: 'gray', label: 'Gray', class: 'bg-gray-500' },
+  { value: 'zinc', label: 'Zinc', class: 'bg-zinc-500' },
+  { value: 'neutral', label: 'Neutral', class: 'bg-neutral-500' },
+  { value: 'stone', label: 'Stone', class: 'bg-stone-500' }
+]
 
 const {
   enabled: collaborationEnabled,
@@ -375,8 +437,16 @@ const handleFileUpload = (event: Event) => {
 
 <template>
   <div>
-    <!-- Export/Import Controls -->
+    <!-- Export/Import/Settings Controls -->
     <div class="fixed top-4 right-4 z-50 flex gap-2 print:hidden">
+      <UButton
+        icon="i-lucide-settings"
+        color="neutral"
+        variant="soft"
+        size="sm"
+        label="Settings"
+        @click="isSettingsOpen = true"
+      />
       <UButton
         icon="i-lucide-download"
         color="neutral"
@@ -401,6 +471,91 @@ const handleFileUpload = (event: Event) => {
         @change="handleFileUpload"
       >
     </div>
+
+    <!-- Settings Modal -->
+    <UModal v-model:open="isSettingsOpen">
+      <UButton
+        icon="i-lucide-settings"
+        color="neutral"
+        variant="subtle"
+        label="Settings"
+        class="hidden"
+      />
+
+      <template #header>
+        <h3 class="text-lg font-semibold">
+          Customize Editor
+        </h3>
+      </template>
+
+      <template #body>
+        <div class="space-y-4">
+          <UFormField
+            label="Primary Color"
+            help="Main accent color for the editor"
+            class="w-full"
+          >
+            <USelectMenu
+              v-model="settings.primaryColor"
+              :items="colorOptions"
+              value-key="value"
+              class="min-w-96"
+            >
+              <template #item-leading="{ item }">
+                <span :class="[item.class, 'size-4']" />
+              </template>
+              <template #leading>
+                <span
+                  :class="[
+                    colorOptions.find(c => c.value === settings.primaryColor)?.class,
+                    'size-4'
+                  ]"
+                />
+              </template>
+            </USelectMenu>
+          </UFormField>
+
+          <UFormField
+            label="Neutral Color"
+            help="Background and text color scheme"
+          >
+            <USelectMenu
+              v-model="settings.neutralColor"
+              :items="neutralOptions"
+              value-key="value"
+              class="min-w-96 "
+            >
+              <template #item-leading="{ item }">
+                <span :class="[item.class, 'size-4']" />
+              </template>
+              <template #leading>
+                <span
+                  :class="[
+                    neutralOptions.find(c => c.value === settings.neutralColor)?.class,
+                    'size-4'
+                  ]"
+                />
+              </template>
+            </USelectMenu>
+          </UFormField>
+        </div>
+      </template>
+
+      <template #footer>
+        <div class="flex justify-end gap-2 w-full">
+          <UButton
+            color="neutral"
+            variant="ghost"
+            label="Cancel"
+            @click="isSettingsOpen = false"
+          />
+          <UButton
+            label="Save Settings"
+            @click="saveSettings"
+          />
+        </div>
+      </template>
+    </UModal>
 
     <UEditor
       v-if="collaborationReady"
