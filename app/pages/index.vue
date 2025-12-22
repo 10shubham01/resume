@@ -11,6 +11,19 @@ const runtimeConfig = useRuntimeConfig()
 const room = computed(() => route.query.room as string | undefined)
 const hideWatermark = computed(() => route.query.thanks === 'shubham')
 
+// SEO Meta Tags
+useSeoMeta({
+  title: 'Resume Editor - Create Professional Resumes Online',
+  description: 'Free online resume editor with A4 page preview. Customize typography, colors, spacing. Export as JSON or print to PDF. Perfect for creating professional CVs and resumes.',
+  ogTitle: 'Resume Editor - Create Professional Resumes Online',
+  ogDescription: 'Free online resume editor with A4 page preview. Customize typography, colors, spacing. Export as JSON or print to PDF.',
+  ogType: 'website',
+  ogUrl: 'https://resume.shubham.gupta',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Resume Editor - Create Professional Resumes Online',
+  twitterDescription: 'Free online resume editor with A4 page preview. Perfect for creating professional CVs and resumes.'
+})
+
 const user = useState('user', () => ({
   name: getRandomName(),
   color: getRandomColor()
