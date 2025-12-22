@@ -269,6 +269,9 @@ const content = ref(
                   rel: 'noopener noreferrer nofollow',
                   class: null
                 }
+              },
+              {
+                type: 'underline'
               }
             ],
             text: 'Website'
@@ -288,6 +291,9 @@ const content = ref(
                   rel: 'noopener noreferrer nofollow',
                   class: null
                 }
+              },
+              {
+                type: 'underline'
               }
             ],
             text: 'GitHub'
@@ -307,6 +313,9 @@ const content = ref(
                   rel: 'noopener noreferrer nofollow',
                   class: null
                 }
+              },
+              {
+                type: 'underline'
               }
             ],
             text: 'LinkedIn'
@@ -462,7 +471,16 @@ const content = ref(
           },
           {
             type: 'text',
-            text: '                                                                       Dec 2022 -Present'
+            text: '                                                                       '
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Dec 2022 Present'
           }
         ]
       },
@@ -946,7 +964,16 @@ const content = ref(
           },
           {
             type: 'text',
-            text: '                                                                                                              Aug 2021 – Nov 2022'
+            text: '                                                                                                            '
+          },
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Aug 2021 – Nov 2022'
           }
         ]
       },
@@ -1095,11 +1122,7 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'Lovely Professional University                                                                                                                                                          '
-          },
-          {
-            type: 'text',
-            text: '2018-2021'
+            text: 'Lovely Professional University                                                                                                                                                         2018-2021'
           }
         ]
       },
