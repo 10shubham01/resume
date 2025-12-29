@@ -352,7 +352,7 @@ const content = ref(
         content: [
           {
             type: 'text',
-            text: 'Experienced Software Developer with a solid foundation in full-stack development. Proficient in JavaScript, TypeScript, Vue.js, React.js, Nuxt.js, Next.js, Node.js, and MySQL, committed to delivering impactful and results-focused solutions.'
+            text: 'Experienced Software Engineer with a solid foundation in full-stack development. Proficient in JavaScript, TypeScript, React.js,  Next.js, Vue.js, Nuxt.js, Node.js, and PostgreSQL, committed to delivering impactful and results-focused solutions.'
           }
         ]
       },
@@ -394,11 +394,29 @@ const content = ref(
           },
           {
             type: 'text',
-            text: ' TypeScript, JavaScript, NodeJS, HTML, CSS, Tailwind, VueJS, NuxtJS, ReactJS, NextJS, AdonisJS, ExpressJS, PostgreSQL, MySQL, Git, Bash, Webpack, Vite, AWS, GitHub CI/CD.'
+            text: ' TypeScript, '
           },
           {
-            type: 'hardBreak'
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'ReactJS, NextJS, VueJS, NuxtJS,Tailwind, AdonisJS,'
           },
+          {
+            type: 'text',
+            text: ' JavaScript, NodeJS, HTML, CSS,  ExpressJS, PostgreSQL, PostgreSQL, Git, Webpack, Vite, AWS, GitHub CI/CD.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
           {
             type: 'text',
             marks: [
@@ -532,7 +550,101 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Managed and optimized GitHub CI/CD pipelines for streamlined deployment processes on AWS infrastructure.'
+                    text: 'Designed and built multiple end-to-end AWS architectures from scratch, achieving scalable, reliable, and cost-optimized solutions in production.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Drove delivery of '
+                  },
+                  {
+                    type: 'text',
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'end-to-end credit card and personal loan journeys'
+                  },
+                  {
+                    type: 'text',
+                    text: ', integrating web SDKs, KYC providers, and lender APIs while balancing regulatory constraints and user experience.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Integrated production observability using '
+                  },
+                  {
+                    type: 'text',
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'New Relic '
+                  },
+                  {
+                    type: 'text',
+                    text: 'to monitor critical fintech workflows and reduce time-to-diagnosis.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Enabled reliable attribution tracking using Singular to support growth analysis across regulated onboarding flows.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'listItem',
+            content: [
+              {
+                type: 'paragraph',
+                attrs: {
+                  textAlign: null
+                },
+                content: [
+                  {
+                    type: 'text',
+                    text: 'Led AI adoption initiatives to enhance code quality and accelerate software delivery through team-wide enablement sessions.'
                   }
                 ]
               }
@@ -571,7 +683,11 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'Customer Portal:'
+            text: 'Bureau wrap video:'
+          },
+          {
+            type: 'text',
+            text: ' A Next.js-based credit score visualization platform with Remotion video'
           }
         ]
       },
@@ -589,7 +705,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Integrated bank APIs to streamline credit card and personal loan application journeys, enhancing user experience and operational efficiency. '
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Role/Contribution'
+                  },
+                  {
+                    type: 'text',
+                    text: ': Implemented a full-stack system for generating dynamic credit score videos, optimizing rendering performance and data-driven content generation from bureau reports.'
                   }
                 ]
               }
@@ -606,75 +731,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Spearheaded a project restructuring initiative using composable components and industry best practices, improving code maintainability by 20% and enhancing accessibility. '
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'listItem',
-            content: [
-              {
-                type: 'paragraph',
-                attrs: {
-                  textAlign: null
-                },
-                content: [
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Impact'
+                  },
                   {
                     type: 'text',
-                    text: 'Achieved significant page load time optimization through expertise in lifecycle hooks, rendering strategies, asynchronous components, virtual scrolling, debouncing, and throttling.'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'listItem',
-            content: [
-              {
-                type: 'paragraph',
-                attrs: {
-                  textAlign: null
-                },
-                content: [
-                  {
-                    type: 'text',
-                    text: ' Designed a customizable portal enabling partners to personalize colors, logos, fonts, and backgrounds for seamless branding integration. '
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'listItem',
-            content: [
-              {
-                type: 'paragraph',
-                attrs: {
-                  textAlign: null
-                },
-                content: [
-                  {
-                    type: 'text',
-                    text: 'Utilized validation libraries like Zod, Yup, and Vee-Validate to enforce robust input validation across projects.'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'listItem',
-            content: [
-              {
-                type: 'paragraph',
-                attrs: {
-                  textAlign: null
-                },
-                content: [
-                  {
-                    type: 'text',
-                    text: 'Maintained code quality with tools like ESLint, Prettier, and advanced Vite configurations for efficient client-side asset bundling.'
+                    text: ': Enabled automated creation of personalized credit score presentations video, improving client engagement in financial reporting.'
                   }
                 ]
               }
@@ -695,7 +761,32 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'Advisor Portal:'
+            text: 'Tech Stack:'
+          },
+          {
+            type: 'text',
+            text: ' NextJs, Remotion, Tailwind, Aws Lambda, AdonisJS, PostgreSQL.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Customer Portal: '
+          },
+          {
+            type: 'text',
+            text: 'A white-label customer-facing platform for credit card and personal loan journeys.'
           }
         ]
       },
@@ -713,7 +804,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Developed fully accessible and reusable components such as file uploads and text inputs with validation and sanitization.'
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Role / Contribution: '
+                  },
+                  {
+                    type: 'text',
+                    text: 'Built and scaled end-to-end, white-label credit card and personal loan application journeys by integrating multiple bank APIs and lender systems. Re-architected the frontend using composable components and shared design patterns to support multi-partner customization.'
                   }
                 ]
               }
@@ -730,41 +830,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Implemented lead, customer, and earnings report generation with secure file downloads. '
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'listItem',
-            content: [
-              {
-                type: 'paragraph',
-                attrs: {
-                  textAlign: null
-                },
-                content: [
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Impact: '
+                  },
                   {
                     type: 'text',
-                    text: 'Integrated web-based landing and library pages into native apps (Credilio Pro).'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'listItem',
-            content: [
-              {
-                type: 'paragraph',
-                attrs: {
-                  textAlign: null
-                },
-                content: [
-                  {
-                    type: 'text',
-                    text: 'Designed persistent, session-based authentication and authorization systems using JWT, adhering to best security practices.'
+                    text: 'Enabled partners to launch branded credit journeys without code changes, while improving application performance, maintainability, and conversion reliability.'
                   }
                 ]
               }
@@ -785,7 +860,32 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'Plug and Play:'
+            text: 'Tech Stack: '
+          },
+          {
+            type: 'text',
+            text: 'React / Next.js, TypeScript, Tailwind CSS, Vite, Zod, Zustand.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Advisor Portal: '
+          },
+          {
+            type: 'text',
+            text: 'A white-label advisory platform supporting multi-tenant workflows.'
           }
         ]
       },
@@ -803,7 +903,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Delivered dynamic theme support for seamless adaptation to partner platforms with native features like image/text sharing and clipboard access.'
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Role / Contribution: '
+                  },
+                  {
+                    type: 'text',
+                    text: 'Designed and owned a scalable, accessibility-compliant form infrastructure in React, enforcing consistent validation, sanitization, and interaction patterns across white-label deployments. Integrated web-based landing and content libraries into native mobile applications.'
                   }
                 ]
               }
@@ -820,24 +929,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Facilitated communication between Android/iOS apps and WebView in a single-page application (SPA). '
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'listItem',
-            content: [
-              {
-                type: 'paragraph',
-                attrs: {
-                  textAlign: null
-                },
-                content: [
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Impact: '
+                  },
                   {
                     type: 'text',
-                    text: 'Guided partner developers in integrating the web platform into their native applications, leading a team of 3-4 developers.'
+                    text: 'Reduced duplication across partner implementations while ensuring secure, accessible, and consistent advisor experiences across platforms.'
                   }
                 ]
               }
@@ -858,7 +959,32 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'Admin Portal:'
+            text: 'Tech Stack:'
+          },
+          {
+            type: 'text',
+            text: 'React / Next.js, TypeScript, Tailwind CSS, Vite, Zod, Zustand.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Admin Portal: '
+          },
+          {
+            type: 'text',
+            text: 'A centralized administrative system for multi-tenant access control.'
           }
         ]
       },
@@ -876,7 +1002,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Engineered user access management systems based on roles and policies to restrict unauthorized access effectively.'
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Role / Contribution: '
+                  },
+                  {
+                    type: 'text',
+                    text: 'Architected and implemented a role- and policy-driven authorization layer to enforce secure access boundaries across white-label administrative workflows.'
                   }
                 ]
               }
@@ -893,7 +1028,16 @@ const content = ref(
                 content: [
                   {
                     type: 'text',
-                    text: 'Developed robust CSV-based report creation and file download functionalities tailored for administrative use.'
+                    marks: [
+                      {
+                        type: 'bold'
+                      }
+                    ],
+                    text: 'Impact: '
+                  },
+                  {
+                    type: 'text',
+                    text: 'Improved operational safety and partner isolation by ensuring consistent enforcement of permissions across tenants.'
                   }
                 ]
               }
@@ -914,11 +1058,11 @@ const content = ref(
                 type: 'bold'
               }
             ],
-            text: 'Techstack:'
+            text: 'Tech Stack: '
           },
           {
             type: 'text',
-            text: ' Vue, Nuxt, Vuetify, SCSS, Nuxt UI, JWT, Validations, Tailwind, Github actions (CI/CD)'
+            text: 'NuxtJS/VueJs, Typescript, Tailwind , Pinia.'
           }
         ]
       },
@@ -1084,12 +1228,96 @@ const content = ref(
           },
           {
             type: 'text',
-            text: ': Vue2, Nuxt2, ReactJS, TypeScript, ExpressJs , AdonisJs,'
+            text: ': Vue2, Nuxt2, Nuxt 3, TypeScript , AdonisJs,'
           }
         ]
       },
       {
         type: 'horizontalRule'
+      },
+      {
+        type: 'heading',
+        attrs: {
+          textAlign: null,
+          level: 4
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Achivements'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'True Soldier Award'
+          },
+          {
+            type: 'text',
+            text: '                                                                                                                        Credilio Financial Technologies, 2025'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'Recognized for outstanding performance, ownership, and high-impact technical contributions.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            text: 'Strive for Excellence Award'
+          },
+          {
+            type: 'text',
+            text: '                                                                                                     Credilio Financial Technologies,2024'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        attrs: {
+          textAlign: null
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'Awarded for consistently exceeding expectations, high-quality delivery, and continuous improvement.'
+          }
+        ]
       },
       {
         type: 'heading',
